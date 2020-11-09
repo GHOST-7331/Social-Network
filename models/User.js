@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const avatar = require("react-native-elements");
+
 
 const UserSchema = new mongoose.Schema({
   name: {
