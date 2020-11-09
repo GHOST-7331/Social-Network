@@ -1,3 +1,6 @@
 {
-"mongoURI":"mongodb+srv://tylerbelmonte:Phone123!@social-network.x1jxv.mongodb.net/<dbname>?retryWrites=true&w=majority"
+"mongoURI":"mongodb+srv://tylerbelmonte:Phone123!@social-network.x1jxv.mongodb.net/<dbname>?retryWrites=true&w=majority",
+"jwtSecret": "secret token"
 }
+
+
