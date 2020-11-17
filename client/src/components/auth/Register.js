@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 
-const Register = () => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,6 +14,16 @@ const Register = () => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      setAlert("Passwords do not match", "danger");
+    } else {
+      register({ name, email, password });
+    }
+  };
+
+
   return (
     <Fragment>
       <section className="container">
@@ -20,7 +31,7 @@ const Register = () => {
         <p className="lead">
           <i className="fas fa-user"></i> Create Your Account
         </p>
-        <form className="form" action="create-profile.html">
+        <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
@@ -69,7 +80,7 @@ const Register = () => {
           <input type="submit" className="btn btn-primary" value="Register" />
         </form>
         <p className="my-1">
-          Already have an account? <a href="login.html">Sign In</a>
+          Already have an account? <Link to="/login">Sign In</Link>
         </p>
       </section>
     </Fragment>

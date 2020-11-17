@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar bg-dark">
       <h1>
         <Link to="/">
-        <i class="fas fa-laptop"></i> Dev-Network
+        <i className="fas fa-laptop"></i> Dev-Network
         </Link>
       </h1>
       <ul>
